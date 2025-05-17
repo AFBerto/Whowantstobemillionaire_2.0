@@ -12,7 +12,7 @@ body {
 .start-screen {
   background: url('images/b.png') no-repeat center center fixed;
   background-size: cover;
-  background-color: #000000; /* Fondo de respaldo si b.png no carga */
+  background-color: #000000; /* Fondo de respaldo */
 }
 
 .bg-image {
@@ -23,7 +23,7 @@ body {
   height: 100%;
   background: url('images/bg.png') no-repeat center center;
   background-size: cover;
-  background-color: rgba(0, 0, 0, 0.5); /* Fondo de respaldo si bg.png no carga */
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo de respaldo */
   z-index: 1;
 }
 
@@ -65,6 +65,24 @@ body {
   opacity: 0;
 }
 
+/* Estados iniciales para animaciones */
+.initial {
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+/* Estados animados */
+.animate {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.play-button.animate, .website-link.animate {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
 .website-link:hover {
   text-decoration: underline;
 }
@@ -81,7 +99,7 @@ h1, p {
   font-size: 3vmin;
 }
 
-/* Media query para pantallas más pequeñas (~13 pulgadas, e.g., 1280px) */
+/* Media queries para pantallas de 13 a 32 pulgadas */
 @media screen and (max-width: 1280px) {
   .logo {
     max-width: 50vmin;
@@ -96,7 +114,6 @@ h1, p {
   }
 }
 
-/* Media query para pantallas más grandes (~32 pulgadas, e.g., 2560px y superior) */
 @media screen and (min-width: 2560px) {
   .logo {
     max-width: 35vmin;
