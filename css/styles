@@ -5,18 +5,21 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: url('../images/b.png') no-repeat center center fixed;
+    background: url('../images/b.png') no-repeat center center;
     background-size: cover;
 }
 
 .container {
     position: relative;
     text-align: center;
+    width: 100%;
+    height: 100%;
 }
 
 #bg {
-    width: 80%;
-    max-width: 800px;
+    width: 60vw;
+    max-width: 600px;
+    max-height: 60vh;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -25,8 +28,9 @@ body {
 }
 
 #logo {
-    width: 60%;
-    max-width: 600px;
+    width: 40vw;
+    max-width: 400px;
+    max-height: 40vh;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -35,7 +39,9 @@ body {
 }
 
 #playButton {
-    width: 200px;
+    width: 15vw;
+    max-width: 150px;
+    max-height: 15vh;
     position: absolute;
     bottom: 20%;
     left: 50%;
@@ -52,7 +58,7 @@ body {
     color: white;
     font-family: 'Barlow Semi Condensed', sans-serif;
     font-weight: 500;
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-decoration: none;
     opacity: 0;
     animation: grow 0.5s ease-out 2s forwards, fadeIn 0.5s ease-out 2.5s forwards;
@@ -61,6 +67,24 @@ body {
 #websiteLink:hover {
     text-decoration: underline;
     color: #ffd700;
+}
+
+@media screen and (max-width: 600px) {
+    #bg {
+        width: 80vw;
+        max-width: 300px;
+    }
+    #logo {
+        width: 60vw;
+        max-width: 200px;
+    }
+    #playButton {
+        width: 20vw;
+        max-width: 100px;
+    }
+    #websiteLink {
+        font-size: 0.8rem;
+    }
 }
 
 @keyframes grow {
