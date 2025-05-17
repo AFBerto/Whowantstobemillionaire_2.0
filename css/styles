@@ -1,163 +1,75 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
 body {
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: url('../images/b.png') no-repeat center center;
-    background-size: cover;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
-.container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+.start-screen {
+  background: url('images/b.png') no-repeat center center fixed;
+  background-size: cover;
 }
 
-#bg {
-    width: 40vw;
-    max-width: 400px;
-    max-height: 40vh;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    opacity: 0;
-    visibility: hidden;
-    animation: grow 1s ease-out forwards;
-    will-change: transform, opacity;
+.bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('images/bg.png') no-repeat center center;
+  background-size: cover;
+  z-index: 1;
 }
 
-#logo {
-    width: 30vw;
-    max-width: 300px;
-    max-height: 30vh;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    opacity: 0;
-    visibility: hidden;
-    animation: grow 1s ease-out 1s forwards;
-    will-change: transform, opacity;
+.logo {
+  position: relative;
+  z-index: 2;
+  max-width: 50%;
+  height: auto;
 }
 
-#playButton {
-    width: 10vw;
-    max-width: 100px;
-    max-height: 10vh;
-    position: absolute;
-    bottom: 20%;
-    left: 50%;
-    transform: translateX(-50%) scale(0);
-    opacity: 0;
-    visibility: hidden;
-    cursor: pointer;
-    animation: grow 0.5s ease-out 2s forwards, blink 1s infinite 2.5s;
-    will-change: transform, opacity;
+.play-button {
+  position: relative;
+  z-index: 3;
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  margin-top: 20px;
 }
 
-#websiteLink {
-    position: absolute;
-    bottom: 10%;
-    left: 50%;
-    transform: translateX(-50%) scale(0);
-    color: white;
-    font-family: 'Barlow Semi Condensed', sans-serif;
-    font-weight: 500;
-    font-size: 0.8rem;
-    text-decoration: none;
-    opacity: 0;
-    visibility: hidden;
-    animation: grow 0.5s ease-out 2s forwards, fadeIn 0.5s ease-out 2.5s forwards;
-    will-change: transform, opacity;
+.play-button img {
+  max-width: 200px;
+  height: auto;
 }
 
-#websiteLink:hover {
-    text-decoration: underline;
-    color: #ffd700;
+.website-link {
+  position: relative;
+  z-index: 3;
+  margin-top: 20px;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: #ffffff;
+  text-decoration: none;
+  opacity: 0;
 }
 
-@media screen and (max-width: 600px) {
-    #bg {
-        width: 60vw;
-        max-width: 250px;
-        max-height: 35vh;
-    }
-    #logo {
-        width: 45vw;
-        max-width: 180px;
-        max-height: 25vh;
-    }
-    #playButton {
-        width: 15vw;
-        max-width: 80px;
-        max-height: 8vh;
-        bottom: 15%;
-    }
-    #websiteLink {
-        font-size: 0.6rem;
-        bottom: 5%;
-    }
+.website-link:hover {
+  text-decoration: underline;
 }
 
-@media screen and (min-width: 1200px) {
-    #bg {
-        width: 35vw;
-        max-width: 450px;
-    }
-    #logo {
-        width: 25vw;
-        max-width: 350px;
-    }
-    #playButton {
-        width: 8vw;
-        max-width: 120px;
-    }
-    #websiteLink {
-        font-size: 0.9rem;
-    }
+.game-screen {
+  background: url('images/bg1.png') no-repeat center center fixed;
+  background-size: cover;
+  color: #ffffff;
+  text-align: center;
 }
 
-@keyframes grow {
-    0% {
-        transform: translate(-50%, -50%) scale(0);
-        opacity: 0;
-        visibility: visible;
-    }
-    100% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 1;
-        visibility: visible;
-    }
-}
-
-@keyframes blink {
-    0%, 100% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.5;
-    }
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        visibility: visible;
-    }
-    100% {
-        opacity: 1;
-        visibility: visible;
-    }
+h1, p {
+  font-family: 'Barlow Semi Condensed', sans-serif;
 }
