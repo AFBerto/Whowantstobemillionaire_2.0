@@ -1,3 +1,38 @@
-document.getElementById('playButton').addEventListener('click', () => {
-    window.location.href = 'game.html';
+document.addEventListener('DOMContentLoaded', () => {
+  const bgImage = document.querySelector('.bg-image');
+  const logo = document.querySelector('.logo');
+  const playButton = document.querySelector('.play-button');
+  const websiteLink = document.querySelector('.website-link');
+
+  // Initial states
+  bgImage.style.opacity = '0';
+  bgImage.style.transform = 'scale(0.5)';
+  logo.style.opacity = '0';
+  logo.style.transform = 'scale(0.5)';
+  playButton.style.display = 'none';
+  websiteLink.style.display = 'none';
+
+  // Animate background image
+  setTimeout(() => {
+    bgImage.style.transition = 'opacity 1s, transform 1s';
+    bgImage.style.opacity = '1';
+    bgImage.style.transform = 'scale(1)';
+  }, 500);
+
+  // Animate logo after background
+  setTimeout(() => {
+    logo.style.transition = 'opacity 1s, transform 1s';
+    logo.style.opacity = '1';
+    logo.style.transform = 'scale(1)';
+  }, 1500);
+
+  // Show play button and website link after animations
+  setTimeout(() => {
+    playButton.style.display = 'block';
+    playButton.style.transition = 'opacity 0.5s';
+    playButton.style.opacity = '1';
+    websiteLink.style.display = 'block';
+    websiteLink.style.transition = 'opacity 0.5s';
+    websiteLink.style.opacity = '1';
+  }, 2500);
 });
