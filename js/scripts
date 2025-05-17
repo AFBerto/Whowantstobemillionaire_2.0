@@ -4,35 +4,35 @@ document.addEventListener('DOMContentLoaded', () => {
   const playButton = document.querySelector('.play-button');
   const websiteLink = document.querySelector('.website-link');
 
-  // Initial states
-  bgImage.style.opacity = '0';
-  bgImage.style.transform = 'scale(0.5)';
-  logo.style.opacity = '0';
-  logo.style.transform = 'scale(0.5)';
+  // Verificar que los elementos existan
+  if (!bgImage || !logo || !playButton || !websiteLink) {
+    console.error('Uno o más elementos no se encontraron:', { bgImage, logo, playButton, websiteLink });
+    return;
+  }
+
+  // Asegurar estados iniciales
+  bgImage.classList.add('initial');
+  logo.classList.add('initial');
   playButton.style.display = 'none';
   websiteLink.style.display = 'none';
 
-  // Animate background image
+  // Animar bg.png
   setTimeout(() => {
-    bgImage.style.transition = 'opacity 1s, transform 1s';
-    bgImage.style.opacity = '1';
-    bgImage.style.transform = 'scale(1)';
+    bgImage.classList.remove('initial');
+    bgImage.classList.add('animate');
   }, 500);
 
-  // Animate logo after background
+  // Animar logobig.png
   setTimeout(() => {
-    logo.style.transition = 'opacity 1s, transform 1s';
-    logo.style.opacity = '1';
-    logo.style.transform = 'scale(1)';
+    logo.classList.remove('initial');
+    logo.classList.add('animate');
   }, 1500);
 
-  // Show play button and website link after animations
+  // Mostrar botón y enlace
   setTimeout(() => {
     playButton.style.display = 'block';
-    playButton.style.transition = 'opacity 0.5s';
-    playButton.style.opacity = '1';
+    playButton.classList.add('animate');
     websiteLink.style.display = 'block';
-    websiteLink.style.transition = 'opacity 0.5s';
-    websiteLink.style.opacity = '1';
+    websiteLink.classList.add('animate');
   }, 2500);
 });
