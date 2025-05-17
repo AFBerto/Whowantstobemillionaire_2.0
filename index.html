@@ -1,19 +1,60 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quién Quiere Ser Millonario - Física</title>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¿Quién Quiere Ser Millonario? Física</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500&display=swap" rel="stylesheet">
 </head>
-<body>
-    <div class="container">
-        <img id="bg" src="images/bg.png" alt="Background Logo">
-        <img id="logo" src="images/logobig.png" alt="Game Logo">
-        <img id="playButton" src="images/jugar.png" alt="Jugar">
-        <a id="websiteLink" href="https://www.aprendiendofisicaconbertotomas.com" target="_blank">www.aprendiendofisicaconbertotomas.com</a>
-    </div>
-    <script src="js/scripts.js"></script>
+<body class="start-screen">
+  <div class="bg-image"></div>
+  <img src="images/logobig.png" alt="Logo" class="logo">
+  <button class="play-button" onclick="window.location.href='game.html'">
+    <img src="images/jugar.png" alt="Jugar">
+  </button>
+  <a href="https://www.aprendiendofisicaconbertotomas.com" class="website-link">
+    www.aprendiendofisicaconbertotomas.com
+  </a>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const bgImage = document.querySelector('.bg-image');
+      const logo = document.querySelector('.logo');
+      const playButton = document.querySelector('.play-button');
+      const websiteLink = document.querySelector('.website-link');
+
+      // Initial states
+      bgImage.style.opacity = '0';
+      bgImage.style.transform = 'scale(0.5)';
+      logo.style.opacity = '0';
+      logo.style.transform = 'scale(0.5)';
+      playButton.style.display = 'none';
+      websiteLink.style.display = 'none';
+
+      // Animate background image
+      setTimeout(() => {
+        bgImage.style.transition = 'opacity 1s, transform 1s';
+        bgImage.style.opacity = '1';
+        bgImage.style.transform = 'scale(1)';
+      }, 500);
+
+      // Animate logo after background
+      setTimeout(() => {
+        logo.style.transition = 'opacity 1s, transform 1s';
+        logo.style.opacity = '1';
+        logo.style.transform = 'scale(1)';
+      }, 1500);
+
+      // Show play button and website link after animations
+      setTimeout(() => {
+        playButton.style.display = 'block';
+        playButton.style.transition = 'opacity 0.5s';
+        playButton.style.opacity = '1';
+        websiteLink.style.display = 'block';
+        websiteLink.style.transition = 'opacity 0.5s';
+        websiteLink.style.opacity = '1';
+      }, 2500);
+    });
+  </script>
 </body>
 </html>
