@@ -12,6 +12,7 @@ body {
 .start-screen {
   background: url('images/b.png') no-repeat center center fixed;
   background-size: cover;
+  background-color: #000000; /* Fondo de respaldo si b.png no carga */
 }
 
 .bg-image {
@@ -22,13 +23,16 @@ body {
   height: 100%;
   background: url('images/bg.png') no-repeat center center;
   background-size: cover;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo de respaldo si bg.png no carga */
   z-index: 1;
 }
 
 .logo {
   position: relative;
   z-index: 2;
-  max-width: 50%;
+  max-width: 40vmin;
+  max-height: 40vmin;
+  width: 100%;
   height: auto;
 }
 
@@ -39,21 +43,23 @@ body {
   border: none;
   cursor: pointer;
   opacity: 0;
-  margin-top: 20px;
+  margin-top: 2vmin;
 }
 
 .play-button img {
-  max-width: 200px;
+  max-width: 20vmin;
+  max-height: 10vmin;
+  width: 100%;
   height: auto;
 }
 
 .website-link {
   position: relative;
   z-index: 3;
-  margin-top: 20px;
+  margin-top: 2vmin;
   font-family: 'Barlow Semi Condensed', sans-serif;
   font-weight: 500;
-  font-size: 1.2rem;
+  font-size: 2.5vmin;
   color: #ffffff;
   text-decoration: none;
   opacity: 0;
@@ -72,4 +78,35 @@ body {
 
 h1, p {
   font-family: 'Barlow Semi Condensed', sans-serif;
+  font-size: 3vmin;
+}
+
+/* Media query para pantallas más pequeñas (~13 pulgadas, e.g., 1280px) */
+@media screen and (max-width: 1280px) {
+  .logo {
+    max-width: 50vmin;
+    max-height: 50vmin;
+  }
+  .play-button img {
+    max-width: 25vmin;
+    max-height: 12vmin;
+  }
+  .website-link {
+    font-size: 3vmin;
+  }
+}
+
+/* Media query para pantallas más grandes (~32 pulgadas, e.g., 2560px y superior) */
+@media screen and (min-width: 2560px) {
+  .logo {
+    max-width: 35vmin;
+    max-height: 35vmin;
+  }
+  .play-button img {
+    max-width: 18vmin;
+    max-height: 9vmin;
+  }
+  .website-link {
+    font-size: 2vmin;
+  }
 }
